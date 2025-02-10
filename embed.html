@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Read embed data from URL
+        const params = new URLSearchParams(window.location.search);
+        let data = params.get("data");
+
+        if (data) {
+            let embedData = JSON.parse(atob(decodeURIComponent(data)));
+
+            document.title = embedData.title;
+
+            document.write(`
+                <meta property="og:title" content="${embedData.title}">
+                <meta property="og:description" content="${embedData.description}">
+                <meta property="og:image" content="${embedData.image}">
+                <meta http-equiv="refresh" content="0; URL=${embedData.redirect}">
+            `);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
