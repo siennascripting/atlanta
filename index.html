@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Embed Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Discord Embed Generator</h2>
+        <label>Title:</label>
+        <input type="text" id="title" placeholder="Enter title">
+
+        <label>Description:</label>
+        <textarea id="description" placeholder="Enter description"></textarea>
+
+        <label>Image URL:</label>
+        <input type="text" id="image" placeholder="Enter image URL">
+
+        <label>Redirect URL:</label>
+        <input type="text" id="redirect" placeholder="Enter where the embed should go">
+
+        <button onclick="generateEmbed()">Generate Embed</button>
+
+        <p>Generated Embed: <a id="output" target="_blank"></a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
